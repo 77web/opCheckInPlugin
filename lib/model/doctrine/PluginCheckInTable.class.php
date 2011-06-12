@@ -74,7 +74,7 @@ class PluginCheckInTable extends Doctrine_Table
   * @param mixed $currentMemberId  integer or null if alian
   * @return object sfDoctrinePager
   */
-  public function getSpotPager($memberId, $size, $page, $publicFlag = self::PUBLIC_FLAG_SNS)
+  public function getSpotPager($spotId, $size, $page, $publicFlag = self::PUBLIC_FLAG_SNS)
   {
     $query = $this->createQuery('c')->addWhere('c.check_in_spot_id = ?', $spotId)->addWhere('c.public_flag >= ?', $publicFlag)->orderBy('c.created_at DESC');
     
