@@ -1,0 +1,42 @@
+checkin_create:
+  url: /checkIn/now/:id
+  class: sfDoctrineRoute
+  options: { model: CheckInSpot, type: object }
+  param: { module: checkIn, action: create }
+  requirements:
+    id: \d+
+    sf_method: [get, post]
+
+checkin_edit:
+  url: /checkIn/edit/:id
+  class: sfDoctrineRoute
+  options: { model: CheckIn, type: object }
+  param: { module: checkIn, action: edit }
+  requirements:
+    id: \d+
+    sf_method: [get, post]
+
+my_checkin_list:
+  url: /checkIn/list
+  param: { module: checkIn, action: list }
+
+checkin_list:
+  url: /checkIn/list
+  param: { module: checkIn, action: list }
+
+checkin_show:
+  url: /checkIn/show/:id
+  class: sfDoctrineRoute
+  options: { model: CheckIn, type: object }
+  param: { module: checkIn, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get, post]
+
+checkin_spot:
+  url: /checkIn/spot/:id
+  class: sfDoctrineRoute
+  options: { model: CheckInSpot, type: object }
+  param: { module: checkInSpot, action: show }
+  requirements:
+    id: \d+

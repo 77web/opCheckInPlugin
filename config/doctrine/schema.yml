@@ -1,0 +1,43 @@
+CheckIn:
+  actAs:
+    Timestampable:
+    Geographical:
+  columns:
+    id: { type: integer(4), primary: true, autoincrement: true }
+    member_id: { type: integer(4), notnull: false }
+    check_in_spot_id: { type: integer(4), notnull: false }
+    body: { type: string }
+    public_flag: { type: integer(1), notnull: true }
+  relations:
+    Member:
+      onDelete: set null
+    CheckInSpot:
+      onDelete: cascade
+
+CheckInComment:
+  actAs:
+    Timestampable:
+  columns:
+    id: { type: integer(4), primary: true, autoincrement: true }
+    member_id: { type: integer(4), notnull: false }
+    check_in_id: { type: integer(4), notnull: true }
+    number: { type: integer }
+    body: { type: string }
+    has_read: { type: boolean, default: false }
+  relations:
+    Member:
+      onDelete: set null
+    CheckIn:
+      onDelete: cascade
+
+CheckInSpot:
+  actAs:
+    Timestampable:
+    Geographical:
+  columns:
+    id: { type: integer(4), primary: true, autoincrement: true }
+    name: { type: string(255) }
+    address: { type: string }
+    tel: { type: string(20)  }
+    url: { type: string(255) }
+    description: { type: string }

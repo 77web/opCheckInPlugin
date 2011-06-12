@@ -1,0 +1,16 @@
+selectSpot:
+  is_secure: true
+  credentials: [SNSMember]
+  
+create:
+  is_secure: true
+  credentials: [SNSMember]
+
+edit:
+  is_secure: true
+  credentials: [SNSMember]
+
+delete:
+  is_secure: true
+  credentials: [SNSMember]
+  

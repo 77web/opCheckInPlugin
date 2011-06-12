@@ -1,0 +1,99 @@
+Member:
+  member_1:
+    id: ~
+    name: "OpenPNE君"
+    is_active: 1
+  member_2:
+    id: ~
+    name: "OpenPNE君の友人"
+    is_active: 1
+  member_3:
+    id: ~
+    name: "一般のSNSユーザー"
+    is_active: 1
+  member_4:
+    id: ~
+    name: "OpenPNE君にブロックされているユーザー"
+    is_active: 1
+
+MemberConfig:
+<?php for($i=1;$i<=4;$i++): ?>
+  member_address_<?php echo $i; ?>:
+    name: "pc_address"
+    value: "sns<?php echo $i; ?>@example.com"
+    Member: member_<?php echo $i; ?>
+  member_mobile_address_<?php echo $i; ?>:
+    name: "mobile_address"
+    value: "sns<?php echo $i; ?>@example.com"
+    Member: member_<?php echo $i; ?>
+  member_password_<?php echo $i; ?>:
+    name: "password"
+    value: "<?php echo md5('password') ?>"
+    Member: member_<?php echo $i; ?>
+<?php endfor; ?>
+
+MemberRelationship:
+  member_1_member_2:
+    Member: member_1
+    MemberRelatedByMemberIdFrom: member_2
+    is_friend: 1
+  member_2_member_1:
+    Member: member_2
+    MemberRelatedByMemberIdFrom: member_1
+    is_friend: 1
+  member_1_member_4:
+    Member: member_4
+    MemberRelatedByMemberIdFrom: member_1
+    is_access_block: 1
+
+CheckInSpot:
+  dummy_spot:
+    id: ~
+    name: "千種区役所"
+    address: "名古屋市千種区覚王山通8-37"
+    tel: "052-000-0000"
+    url: "http://www.city.nagoya.jp/chikusa/"
+    latitude: "35.166468"
+    longitude: "136.946342"
+
+CheckIn:
+  open_checkin:
+    id: ~
+    Member: member_1
+    CheckInSpot: dummy_spot
+    body: "テスト"
+    latitude: "35.166468"
+    longitude: "136.946342"
+    public_flag: 4
+  sns_checkin:
+    id: ~
+    Member: member_1
+    CheckInSpot: dummy_spot
+    body: "テスト2"
+    latitude: "35.166468"
+    longitude: "136.946342"
+    public_flag: 3
+  friend_checkin:
+    id: ~
+    Member: member_1
+    CheckInSpot: dummy_spot
+    body: "テスト3"
+    latitude: "35.166468"
+    longitude: "136.946342"
+    public_flag: 2
+  private_checkin:
+    id: ~
+    Member: member_1
+    CheckInSpot: dummy_spot
+    body: "テスト4"
+    latitude: "35.166468"
+    longitude: "136.946342"
+    public_flag: 1
+  member_4_checkin:
+    id: ~
+    Member: member_4
+    CheckInSpot: dummy_spot
+    body: "test!!"
+    latitude: "35.166468"
+    longitude: "136.946342"
+    public_flag: 3

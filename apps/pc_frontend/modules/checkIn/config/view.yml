@@ -1,0 +1,2 @@
+selectSpotInput:
+  javascripts: [/opCheckInPlugin/js/jquery.min.js, /opCheckInPlugin/js/location.js]
