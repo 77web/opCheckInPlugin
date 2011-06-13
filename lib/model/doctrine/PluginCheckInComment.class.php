@@ -12,5 +12,8 @@
  */
 abstract class PluginCheckInComment extends BaseCheckInComment
 {
-
+  public function preInsert($event)
+  {
+    $event->getInvoker()->setNumber($event->getInvoker()->getCheckIn()->getCommentCount() + 1);
+  }
 }

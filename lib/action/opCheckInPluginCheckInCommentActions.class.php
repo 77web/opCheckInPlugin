@@ -22,7 +22,7 @@ abstract class opCheckInPluginCheckInCommentActions extends sfActions
   {
     $this->form = new CheckInCommentForm();
     $this->form->getObject()->setCheckIn($this->checkIn);
-    $this->form->getObject()->setMember($this->getUser()->getMemberId());
+    $this->form->getObject()->setMemberId($this->getUser()->getMemberId());
     
     if($request->isMethod(sfRequest::POST))
     {
@@ -30,11 +30,11 @@ abstract class opCheckInPluginCheckInCommentActions extends sfActions
       if($this->form->isValid())
       {
         $this->form->save();
-        $this->redirect('@checkin?id='.$this->checkIn->getId());
+        $this->redirect('@checkin_show?id='.$this->checkIn->getId());
       }
     }
     
-    $this->setTemplate('form');
+    $this->setTemplate('../../checkIn/show');
   }
   
   public function executeDelete(sfWebRequest $request)

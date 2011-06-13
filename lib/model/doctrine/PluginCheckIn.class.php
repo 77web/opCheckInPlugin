@@ -33,4 +33,9 @@ abstract class PluginCheckIn extends BaseCheckIn
   {
     return $this->getPublicFlag() == CheckInTable::PUBLIC_FLAG_OPEN;
   }
+  
+  public function getCommentCount()
+  {
+    return $this->getCheckInComment()->count();
+  }
 }

@@ -45,6 +45,7 @@ abstract class opCheckInPluginCheckInActions extends sfActions
     $this->forward404Unless($this->checkIn->isVisible($this->getUser()->getMemberId()));
     
     $this->form = new CheckInCommentForm();
+    $this->commentPager = Doctrine::getTable('CheckInComment')->getCheckInPager($this->checkIn->getId(), $this->size, $this->page);
   }
   
   public function executeDelete(sfWebRequest $request)
