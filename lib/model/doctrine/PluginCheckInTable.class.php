@@ -64,6 +64,16 @@ class PluginCheckInTable extends Doctrine_Table
     
     return $this->generatePager($query, $size, $page);
   }
+  
+  public function getMemberRecentList($memberId, $size, $currentMemberId)
+  {
+    $query = $this->createQuery('c')->addWhere('c.member_id = ?', $memberId)->orderBy('c.created_at DESC');
+    
+    $minPublicFlag = $this->getMinPublicFlag($memberId, $currentMemberId);
+    $query->addWhere('c.public_flag >= ?', $minPublicFlag);
+    
+    return $query->limit($size)->execute();
+  }
 
  /**
   * pager for specified spot
