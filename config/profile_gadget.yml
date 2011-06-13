@@ -1,8 +1,8 @@
 checkInMemberList:
   caption:
-    ja_JP: "最新%checkin%"
+    ja_JP: "最新チェックイン"
   description:
-    ja_JP: "メンバーの%checkin%を新着順に表示します。"
+    ja_JP: "メンバーのチェックインを新着順に表示します。"
   component: [checkIn, memberRecentList]
   config:
     max:

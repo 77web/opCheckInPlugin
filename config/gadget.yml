@@ -1,8 +1,8 @@
 checkInFriendList:
   caption:
-    ja_JP: "%friend%の最新%checkin%"
+    ja_JP: "マイフレンドの最新チェックイン"
   description:
-    ja_JP: "%friend%の%checkin%を新着順に表示します。"
+    ja_JP: "マイフレンドのチェックインを新着順に表示します。"
   component: [checkIn, friendRecentList]
   config:
     max:
@@ -21,9 +21,9 @@ checkInFriendList:
 
 checkInSnsList:
   caption:
-    ja_JP: "全体の最新%checkin%"
+    ja_JP: "全体の最新チェックイン"
   description:
-    ja_JP: "全体の%checkin%を新着順に表示します。"
+    ja_JP: "全体のチェックインを新着順に表示します。"
   component: [checkIn, snsRecentList]
   config:
     max:
