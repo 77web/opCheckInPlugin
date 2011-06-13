@@ -35,8 +35,21 @@ abstract class PluginCheckIn extends BaseCheckIn
     return $this->getPublicFlag() == CheckInTable::PUBLIC_FLAG_OPEN;
   }
   
+ /**
+  * count up comment count
+  * @access public
+  */
   public function upCommentCount()
   {
     Doctrine_Query::create()->update('CheckIn c')->set('c.comment_count', 'c.comment_count + 1')->where('c.id = ?', $this->getId())->execute();
+  }
+  
+ /**
+  * count up check-in count of spot
+  * @access public
+  */
+  public function postInsert($event)
+  {
+    $event->getInvoker()->getCheckInSpot()->upCheckInCount();
   }
 }
