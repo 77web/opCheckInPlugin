@@ -16,6 +16,16 @@ checkin_edit:
     id: \d+
     sf_method: [get, post]
 
+checkin_delete:
+  url: /checkIn/delete/:id
+  class: sfDoctrineRoute
+  options: { model: CheckIn, type: object }
+  param: { module: checkIn, action: delete }
+  requirements:
+    id: \d+
+    sf_method: [get, post]
+
+
 my_checkin_list:
   url: /checkIn/list
   param: { module: checkIn, action: list }
@@ -29,6 +39,15 @@ checkin_show:
   class: sfDoctrineRoute
   options: { model: CheckIn, type: object }
   param: { module: checkIn, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get, post]
+
+checkin_comment_delete:
+  url: /checkIn/comment/delete/:id
+  class: sfDoctrineRoute
+  options: { model: CheckInComment, type: object }
+  param: { module: checkInComment, action: delete }
   requirements:
     id: \d+
     sf_method: [get, post]

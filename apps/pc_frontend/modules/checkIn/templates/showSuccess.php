@@ -11,8 +11,20 @@
     </td>
   </tr>
 </table>
-
+<div class="body">
+<p class="text">
 <?php echo op_decoration(nl2br($checkIn->getBody())); ?>
+</p>
+</div>
+
+<?php if($checkIn->getMemberId()==$sf_user->getMemberId()): ?>
+  <div class="operation">
+    <ul class="moreInfo button">
+      <li><?php echo button_to(__('Edit'), '@checkin_edit?id='.$checkIn->getId(), 'class=input_submit'); ?></li>
+      <li><?php echo button_to(__('Delete'), '@checkin_delete?id='.$checkIn->getId(), 'class=input_submit'); ?></li>
+    </ul>
+  </div>
+<?php endif; ?>
 
 <?php end_slot(); ?>
 

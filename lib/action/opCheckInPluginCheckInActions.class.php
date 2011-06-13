@@ -62,6 +62,8 @@ abstract class opCheckInPluginCheckInActions extends sfActions
       return;
     }
     
+    $this->form = new BaseForm();
+    
     return sfView::INPUT;
   }
   

@@ -48,9 +48,11 @@ abstract class opCheckInPluginCheckInCommentActions extends sfActions
       
       $this->comment->delete();
       $this->getUser()->setFlash('notice', 'Deleted successfully.');
-      $this->redirect('@checkin?id='.$this->checkIn->getId());
+      $this->redirect('@checkin_show?id='.$this->checkIn->getId());
       return;
     }
+    
+    $this->form = new BaseForm();
     
     return sfView::INPUT;
   }

@@ -5,7 +5,7 @@
 <p class="heading"><strong><?php echo $comment->number ?></strong>:
 <?php if ($_member = $comment->Member): ?> <?php echo link_to($_member->name, '@obj_member_profile?id='.$_member->id) ?><?php endif; ?>
 <?php if ($checkIn->member_id === $sf_user->getMemberId() || $comment->member_id === $sf_user->getMemberId()): ?>
- <?php //echo link_to(__('Delete'), '@checkin_comment_delete?id='.$comment) ?>
+ <?php echo link_to(__('Delete'), '@checkin_comment_delete?id='.$comment) ?>
 <?php endif; ?>
 </p>
 </div>
