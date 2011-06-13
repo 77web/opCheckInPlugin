@@ -1,0 +1,17 @@
+SnsTerm:
+  term_checkin_pc_frontend:
+    name: "checkin"
+    application: "pc_frontend"
+    Translation:
+      ja_JP:
+        value: "チェックイン"
+      en:
+        value: "Check in"
+  term_checkin_mobile_frontend:
+    name: "checkin"
+    application: "mobile_frontend"
+    Translation:
+      ja_JP:
+        value: "ﾁｪｯｸｲﾝ"
+      en:
+        value: "Check in"
