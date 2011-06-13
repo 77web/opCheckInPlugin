@@ -1,20 +1,21 @@
 function postLocation()
 {
-  if(typeof(navigator.geolocation)!='undefined')
+  if(is_smartphone() && typeof(navigator.geolocation)!='undefined')
   {
     navigator.geolocation.getCurrentPosition(postForm);
-  }
-  else
-  {
-    alert('Geolocation is not available');
   }
 }
 
 function postForm(position)
 {
-window.position = position;
   jQuery('#lat').val(position.coords.latitude);
   jQuery('#lng').val(position.coords.longitude);
   
   jQuery('#latLngForm').submit();
+}
+
+function is_smartphone()
+{
+  var agent = navigator.userAgent;
+  return agent.indexOf('Android') != -1 || agent.indexOf('iPhone; U') != -1 || agent.indexOf('iPad; U') != -1;
 }
