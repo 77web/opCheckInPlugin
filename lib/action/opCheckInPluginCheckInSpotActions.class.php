@@ -14,6 +14,6 @@ abstract class opCheckInPluginCheckInSpotActions extends sfActions
   public function executeShow(sfWebRequest $request)
   {
     $flag = $this->getUser()->isSNSMember() ? CheckInTable::PUBLIC_FLAG_SNS : CheckInTable::PUBLIC_FLAG_OPEN;
-    $this->pager = Doctrine::getTable('CheckIn')->getSpotPager($this->spot->getId(), $this->size, $this->page);
+    $this->pager = Doctrine::getTable('CheckIn')->getSpotPager($this->spot->getId(), $this->size, $this->page, $flag);
   }
 }

@@ -102,6 +102,7 @@ abstract class opCheckInPluginCheckInActions extends sfActions
   
   public function executeEdit(sfWebRequest $request)
   {
+    $this->forward404Unless($this->checkIn->getMemberId() == $this->getUser()->getMemberId());
     $this->form = new CheckInForm($this->checkIn);
     
     if($request->isMethod(sfRequest::POST))

@@ -20,6 +20,9 @@ abstract class opCheckInPluginCheckInCommentActions extends sfActions
   
   public function executeCreate(sfWebRequest $request)
   {
+    $this->forward404Unless($this->checkIn->isVisible($this->getUser()->getMemberId()));
+    
+    
     $this->form = new CheckInCommentForm();
     $this->form->getObject()->setCheckIn($this->checkIn);
     $this->form->getObject()->setMemberId($this->getUser()->getMemberId());
