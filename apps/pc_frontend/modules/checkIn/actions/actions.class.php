@@ -15,6 +15,7 @@ class checkInActions extends opCheckInPluginCheckInActions
     {
       return sfView::ERROR;
     }
+    return parent::executeSelectSpot($request);
   }
   
   protected function isSmartPhone($request)
