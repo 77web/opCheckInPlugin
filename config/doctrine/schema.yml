@@ -8,7 +8,7 @@ CheckIn:
     check_in_spot_id: { type: integer(4), notnull: false }
     body: { type: string }
     public_flag: { type: integer(1), notnull: true }
-    comment_count: { type: integer(4) }
+    comment_count: { type: integer(4), default: 0, notnull: true }
   relations:
     Member:
       onDelete: set null

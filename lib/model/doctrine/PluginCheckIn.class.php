@@ -12,6 +12,7 @@
  */
 abstract class PluginCheckIn extends BaseCheckIn
 {
+  
  /**
   * whether the specified member can read it
   * @access public
@@ -34,8 +35,8 @@ abstract class PluginCheckIn extends BaseCheckIn
     return $this->getPublicFlag() == CheckInTable::PUBLIC_FLAG_OPEN;
   }
   
-  public function getCommentCount()
+  public function upCommentCount()
   {
-    return $this->getCheckInComment()->count();
+    Doctrine_Query::create()->update('CheckIn c')->set('c.comment_count', 'c.comment_count + 1')->where('c.id = ?', $this->getId())->execute();
   }
 }

@@ -8,6 +8,14 @@
 class PluginCheckInCommentTable extends Doctrine_Table
 {
  /**
+  * @access public
+  * @param integer $checkInId
+  */
+  public function getMaxNumber($checkInId)
+  {
+    return (int)$this->createQuery()->addWhere('check_in_id = ?', $checkInId)->select('MAX(number) as max')->execute(array(), Doctrine::HYDRATE_SINGLE_SCALAR);
+  }
+ /**
   * pager of comment for specified check-in
   * @access public
   * @param integer $checkInId  target check-in id

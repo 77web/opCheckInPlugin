@@ -17,7 +17,17 @@ class PluginCheckInSpotTable extends Doctrine_Table
   */
   public function getNearBySpotPager($latitude, $longitude, $size, $page)
   {
-    $query = $this->createQuery('s');
+    $dummy = new CheckInSpot();
+    $dummy->setLatitude($latitude);
+    $dummy->setLongitude($longitude);
+    
+    $query = $dummy->getDistanceQuery('r', true)->orderby('kilometers');
+    
+    $max = sfConfig::get('app_op_checkin_plugin_max_km', 30);
+    if(0 != $max)
+    {
+      $query->having('kilometers < ?', $max);
+    }
     
     return $this->generatePager($query, $size, $page);
   }

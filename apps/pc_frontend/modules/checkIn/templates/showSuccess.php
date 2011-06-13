@@ -21,11 +21,11 @@
 
 <?php slot('commentList'); ?>
 <?php if($commentPager->getNbResults() > 0): ?>
-  <?php op_include_pager_navigation($pager, '@checkin_show?id='.$checkIn->getId().'&page=%s'); ?>
+  <?php op_include_pager_navigation($commentPager, '@checkin_show?id='.$checkIn->getId().'&page=%s'); ?>
   <?php foreach($commentPager->getResults() as $comment): ?>
     <?php include_partial('checkInComment/listItem', array('comment'=>$comment, 'checkIn'=>$checkIn)); ?>
   <?php endforeach; ?>
-  <?php op_include_pager_navigation($pager, '@checkin_show?id='.$checkIn->getId().'&page=%s'); ?>
+  <?php op_include_pager_navigation($commentPager, '@checkin_show?id='.$checkIn->getId().'&page=%s'); ?>
 <?php else: ?>
   <p><?php echo __('No comment.'); ?></p>
 <?php endif; ?>

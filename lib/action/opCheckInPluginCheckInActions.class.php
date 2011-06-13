@@ -85,9 +85,10 @@ abstract class opCheckInPluginCheckInActions extends sfActions
   
     $this->form = new CheckInForm();
     $this->form->getObject()->setCheckInSpot($this->spot);
+    $this->form->getObject()->setMember($this->getUser()->getMember());
     $this->form->getObject()->setLatitude($position['latitude']);
     $this->form->getObject()->setLongitude($position['longitude']);
-    $this->form->getObject()->setMember($this->getUser()->getMember());
+
     
     if($request->isMethod(sfRequest::POST))
     {
