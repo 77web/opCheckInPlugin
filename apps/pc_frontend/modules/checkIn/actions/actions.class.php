@@ -9,4 +9,17 @@
  */
 class checkInActions extends opCheckInPluginCheckInActions
 {
+  public function executeSelectSpot(sfWebRequest $request)
+  {
+    if(!$this->isSmartPhone($request))
+    {
+      return sfView::ERROR;
+    }
+  }
+  
+  protected function isSmartPhone($request)
+  {
+    $userAgent = $request->getHttpHeader('User-Agent');
+    return strpos($userAgent, 'iPhone OS')!==FALSE || strpos($userAgent, 'Linux; U; Android')!==FALSE;
+  }
 }
