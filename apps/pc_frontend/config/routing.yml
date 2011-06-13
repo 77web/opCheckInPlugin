@@ -1,3 +1,7 @@
+checkin_now:
+  url: /checkIn/start
+  param: { module: checkIn, action: selectSpot }
+
 checkin_create:
   url: /checkIn/now/:id
   class: sfDoctrineRoute
