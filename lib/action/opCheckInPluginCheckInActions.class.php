@@ -69,8 +69,8 @@ abstract class opCheckInPluginCheckInActions extends sfActions
   
   public function executeSelectSpot(sfWebRequest $request)
   {
-    $this->lat = $request->getParameter('lat');
-    $this->lng = $request->getParameter('lng');
+    if(!isset($this->lat)) $this->lat = $request->getParameter('lat');
+    if(!isset($this->lng)) $this->lng = $request->getParameter('lng');
     if(!$this->lat || !$this->lng)
     {
       return sfView::INPUT;

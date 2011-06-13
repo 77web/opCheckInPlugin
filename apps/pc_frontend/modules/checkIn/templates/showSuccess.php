@@ -47,7 +47,10 @@
 
 
 <?php
-$options = array();
-$options['title']= __('Write a comment');
-$options['url'] = url_for('@checkin_comment?id='.$checkIn->getId());
-op_include_form('checkInCommentForm', $form, $options);
+if($sf_user->isSNSMember())
+{
+  $options = array();
+  $options['title']= __('Write a comment');
+  $ptions['url'] = url_for('@checkin_comment?id='.$checkIn->getId());
+  op_include_form('checkInCommentForm', $form, $options);
+}
