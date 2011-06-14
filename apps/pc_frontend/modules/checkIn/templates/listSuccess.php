@@ -7,11 +7,10 @@ $title = __($sf_data->getRaw('title'), array('%member_name%'=>$memberName));
 
 <?php if($pager->getNbResults() > 0): ?>
 <?php op_include_pager_navigation($pager, 'checkIn/'.$sf_request->getParameter('action').'?page=%s'.(isset($member) ? '&member_id='.$member->getId() : '')); ?>
-<ul>
 <?php foreach($pager->getResults() as $checkIn): ?>
-  <?php include_partial('checkIn/simpleListItem', array('checkIn'=>$checkIn)); ?>
+  <?php include_partial('checkIn/listItem', array('checkIn'=>$checkIn)); ?>
 <?php endforeach; ?>
-</ul>
+
 <?php op_include_pager_navigation($pager, 'checkIn/'.$sf_request->getParameter('action').'?page=%s'.(isset($member) ? '&member_id='.$member->getId() : '')); ?>
 
 <?php else: ?>
@@ -19,4 +18,4 @@ $title = __($sf_data->getRaw('title'), array('%member_name%'=>$memberName));
 <?php endif; ?>
 <?php end_slot(); ?>
 
-<?php op_include_box('checkInList', get_slot('checkInList'), array('title'=>$title)); ?>
+<?php op_include_box('checkInList', get_slot('checkInList'), array('title'=>$title, 'class'=>'searchResultList')); ?>

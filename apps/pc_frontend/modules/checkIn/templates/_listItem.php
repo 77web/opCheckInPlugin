@@ -1,3 +1,4 @@
+<div class="ditem">
 <table>
   <tr>
     <td class="photo" rowspan="3"><?php echo link_to(image_tag_sf_image($checkIn->getMember()->getImageFilename(), array('size'=>'76x76', 'alt'=>$checkIn->getMember()->getName())), '@member_profile?id='.$checkIn->getMemberId()); ?></td>
@@ -13,9 +14,9 @@
   <tr>
     <th><?php echo __('Body'); ?></th>
     <td>
-      <p><?php echo op_truncate($checkIn->getBody(), 30, 3, '...'); ?></p>
-      <p class="moreInfo"><?php echo link_to(__('Detail'), '@checkin_show?id='.$checkIn->getId()); ?></p>
+      <p class="text"><?php echo op_truncate($checkIn->getBody(), 30, 3, '...'); ?><?php echo link_to(__('Detail'), '@checkin_show?id='.$checkIn->getId()); ?></p>
     </td>
   </tr>
 
 </table>
+</div>
