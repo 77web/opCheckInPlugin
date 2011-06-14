@@ -23,7 +23,7 @@ class PluginCheckInSpotTable extends Doctrine_Table
     
     $query = $dummy->getDistanceQuery('r', true)->orderby('kilometers');
     
-    $max = sfConfig::get('app_op_checkin_plugin_max_km', 30);
+    $max = sfConfig::get('app_op_checkin_plugin_max_km', 1);
     if(0 != $max)
     {
       $query->having('kilometers < ?', $max);

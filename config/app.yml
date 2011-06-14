@@ -1,0 +1,3 @@
+all:
+  op_checkin_plugin_max_km: 1
+  op_checkin_plugin_pager_limit: 20
