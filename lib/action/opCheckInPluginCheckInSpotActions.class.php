@@ -7,7 +7,7 @@ abstract class opCheckInPluginCheckInSpotActions extends sfActions
     {
       $this->spot = $this->getRoute()->getObject();
     }
-    $this->size = !isset($this->size) ? sfConfig::get('op_checkin_plugin_pager_limit', 20) : $this->size;
+    $this->size = !isset($this->size) ? sfConfig::get('app_op_checkin_plugin_pager_limit', 20) : $this->size;
     $this->page = $this->getRequest()->getParameter('page', 1);
     if($this->page < 1) $this->page = 1;
   }
