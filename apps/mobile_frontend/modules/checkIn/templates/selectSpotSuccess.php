@@ -1,3 +1,11 @@
+<?php slot('map'); ?>
+<?php include_partial('checkIn/map', array('lat'=>$lat, 'lng'=>$lng)); ?>
+<?php end_slot(); ?>
+
+<?php op_include_box('checkInMapBox', get_slot('map'), array('title'=>__('You are here.'))); ?>
+
+
+
 <?php if($pager->getNbResults()>0): ?>
   <?php $list = array(); ?>
   <?php foreach($pager->getResults() as $spot): ?>

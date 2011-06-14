@@ -123,8 +123,8 @@
         <target>詳細を見る</target>
       </trans-unit>
       <trans-unit id="">
-        <source></source>
-        <target></target>
+        <source>You are here.</source>
+        <target>あなたの現在位置</target>
       </trans-unit>
     </body>
   </file>
