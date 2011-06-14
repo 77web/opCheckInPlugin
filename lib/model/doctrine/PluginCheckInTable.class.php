@@ -171,7 +171,7 @@ class PluginCheckInTable extends Doctrine_Table
       $q->andWhereIn('c.member_id', $friendIds);
     }
     
-    return $this->generatePager($query, $size, $page);
+    return $this->generatePager($q, $size, $page);
   }
   
   public function getFriendRecentList($memberId, $max)

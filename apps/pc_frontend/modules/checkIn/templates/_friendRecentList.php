@@ -15,4 +15,4 @@
 
 <?php end_slot(); ?>
 
-<?php op_include_box('friendRecentCheckInList_'.(isset($gadget) ? $gadget->getId() : ''), get_slot('list'), array('title'=>__('Recent %checkin% of %friend%'), 'class'=>'homeRecentList')); ?>
+<?php op_include_box('friendRecentCheckInList_'.(isset($gadget) ? $gadget->getId() : ''), get_slot('list'), array('title'=>__('Recent %checkin% of %my_friend%'), 'class'=>'homeRecentList')); ?>
