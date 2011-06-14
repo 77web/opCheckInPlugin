@@ -1,12 +1,19 @@
-<?php $title = __('%checkin%'); ?>
+<?php
+$memberName = isset($member) ? $member->getName() : '';
+$title = __($sf_data->getRaw('title'), array('%member_name%'=>$memberName));
+?>
 
 <?php slot('checkInList'); ?>
+
 <?php if($pager->getNbResults() > 0): ?>
+<?php op_include_pager_navigation($pager, 'checkIn/'.$sf_request->getParameter('action').'?page=%s'.(isset($member) ? '&member_id='.$member->getId() : '')); ?>
 <ul>
 <?php foreach($pager->getResults() as $checkIn): ?>
-  <li><?php echo op_format_date($checkIn->getCreatedAt(), 'XDateTimeJa').link_to(__('%checkin% to %spot%', array('%spot%'=>$checkIn->getCheckInSpot()->getName())), '@checkin_show?id='.$checkIn->getId()); ?></li>
+  <?php include_partial('checkIn/simpleListItem', array('checkIn'=>$checkIn)); ?>
 <?php endforeach; ?>
 </ul>
+<?php op_include_pager_navigation($pager, 'checkIn/'.$sf_request->getParameter('action').'?page=%s'.(isset($member) ? '&member_id='.$member->getId() : '')); ?>
+
 <?php else: ?>
   <p><?php echo __('No %checkin%.'); ?></p>
 <?php endif; ?>

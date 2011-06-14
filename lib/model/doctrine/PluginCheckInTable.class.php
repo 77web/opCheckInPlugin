@@ -143,10 +143,35 @@ class PluginCheckInTable extends Doctrine_Table
     return self::PUBLIC_FLAG_SNS;
   }
   
+  public function getAllPager($memberId, $size, $page = 1)
+  {
+    $flag = (null != $memberId) ? self::PUBLIC_FLAG_SNS : self::PUBLIC_FLAG_OPEN;
+    $query = $this->createQuery('c')->addWhere('c.public_flag >= ?', $flag)->orderBy('c.created_at DESC');
+    
+    return $this->generatePager($query, $size, $page);
+  }
+  
   public function getSnsRecentList($max, $memberId = null)
   {
     $flag = (null != $memberId) ? self::PUBLIC_FLAG_SNS : self::PUBLIC_FLAG_OPEN;
     return $this->createQuery('c')->addWhere('c.public_flag >= ?', $flag)->orderBy('c.created_at DESC')->limit($max)->execute();
+  }
+  
+  public function getFriendPager($memberId, $size, $page = 1)
+  {
+    $q = $this->createQuery('c')->addWhere('c.public_flag >= ?', self::PUBLIC_FLAG_FRIEND)->orderBy('c.created_at DESC');
+    
+    $friendIds = Doctrine::getTable('MemberRelationship')->getFriendMemberIds($memberId);
+    if(count($friendIds)==0)
+    {
+      $q->addWhere('1=0');
+    }
+    else
+    {
+      $q->andWhereIn('c.member_id', $friendIds);
+    }
+    
+    return $this->generatePager($query, $size, $page);
   }
   
   public function getFriendRecentList($memberId, $max)

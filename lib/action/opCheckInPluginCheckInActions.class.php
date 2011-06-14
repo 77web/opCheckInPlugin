@@ -32,9 +32,24 @@ abstract class opCheckInPluginCheckInActions extends sfActions
     $this->member = $this->memberId ? Doctrine::getTable('Member')->find($this->memberId) : null;
     $this->forward404Unless($this->member);
     
-    
     $this->pager = Doctrine::getTable('CheckIn')->getMemberPager($this->memberId, $this->size, $this->page, $this->getUser()->getMemberId());
+    $this->title = $this->memberId == $this->getUser()->getMemberId() ? 'My %checkin%' : '%member_name%\'s %checkin%';
   }
+  
+  public function executeListFriend(sfWebRequest $request)
+  {
+    $this->pager = Doctrine::getTable('CheckIn')->getFriendPager($this->getUser()->getMemberId(), $this->size, $this->page);
+    $this->title = '%checkin% of %my_friend%';
+    $this->setTemplate('list');
+  }
+
+  public function executeListAll(sfWebRequest $request)
+  {
+    $this->pager = Doctrine::getTable('CheckIn')->getAllPager($this->getUser()->getMemberId(), $this->size, $this->page);
+    $this->title = '%checkin% of all';
+    $this->setTemplate('list');
+  }
+  
   
   public function executeShow(sfWebRequest $request)
   {

@@ -4,6 +4,14 @@
   <?php include_partial('checkIn/simpleListItem', array('checkIn'=>$checkIn)); ?>
 <?php endforeach; ?>
 </ul>
+<?php if (count($list)): ?>
+<div class="moreInfo">
+<ul class="moreInfo">
+<li><?php echo link_to(__('More'), 'all_checkin_list') ?></li>
+</ul>
+</div>
+<?php endif; ?>
+
 <?php end_slot(); ?>
 
 <?php op_include_box('snsRecentCheckInList_'.(isset($gadget) ? $gadget->getId() : ''), get_slot('list'), array('title'=>__('Recent %checkin% of all'), 'class'=>'homeRecentList')); ?>
