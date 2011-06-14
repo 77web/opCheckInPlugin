@@ -31,12 +31,20 @@ checkin_delete:
 
 
 my_checkin_list:
-  url: /checkIn/list
+  url: /checkIns/my
   param: { module: checkIn, action: list }
 
 checkin_list:
-  url: /checkIn/list
+  url: /checkIns/member/:member_id
   param: { module: checkIn, action: list }
+
+all_checkin_list:
+  url: /checkIns/all
+  param: { module: checkIn, action: listAll }
+
+friend_checkin_list:
+  url: /checkIns/friends
+  param: { module: checkIn, action: listFriend }
 
 checkin_show:
   url: /checkIn/show/:id
