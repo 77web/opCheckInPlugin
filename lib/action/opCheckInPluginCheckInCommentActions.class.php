@@ -50,7 +50,7 @@ abstract class opCheckInPluginCheckInCommentActions extends sfActions
       $request->checkCSRFProtection();
       
       $this->comment->delete();
-      $this->getUser()->setFlash('notice', 'Deleted successfully.');
+      $this->getUser()->setFlash('notice', 'Deleted a comment to %checkin% successfully.');
       $this->redirect('@checkin_show?id='.$this->checkIn->getId());
       return;
     }

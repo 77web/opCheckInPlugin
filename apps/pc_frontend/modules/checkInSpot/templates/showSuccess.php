@@ -1,20 +1,20 @@
 <?php slot('spotDetail'); ?>
 <table>
   <tr>
-    <th><?php echo __('Name'); ?></th>
+    <th><?php echo __('Name', array(), 'form_checkInSpot'); ?></th>
     <td>
       <?php echo $spot->getName(); ?>
     </td>
   </tr>
   <tr>
-    <th><?php echo __('Address'); ?></th>
+    <th><?php echo __('Address', array(), 'form_checkInSpot'); ?></th>
     <td>
       <?php echo $spot->getAddress(); ?>
     </td>
   </tr>
   <?php if($spot->getUrl()): ?>
     <tr>
-      <th><?php echo __('Url'); ?></th>
+      <th><?php echo __('Url', array(), 'form_checkInSpot'); ?></th>
       <td>
         <a href="<?php echo $spot->getUrl(); ?>" target="_blank"><?php echo $spot->getUrl(); ?></a>
       </td>
@@ -23,7 +23,7 @@
 </table>
 <?php end_slot(); ?>
 
-<?php op_include_box('spotDetailBox', get_slot('spotDetail'), array('title'=>'Detail of spot')); ?>
+<?php op_include_box('spotDetailBox', get_slot('spotDetail'), array('title'=>__('Detail of spot'))); ?>
 
 <?php slot('checkInList'); ?>
 <?php if($pager->getNbResults() > 0): ?>
@@ -39,4 +39,4 @@
 <?php endif; ?>
 <?php end_slot(); ?>
 
-<?php op_include_box('spotCheckInList', get_slot('checkInList'), array('title'=>'%checkin% at %spot_name%', array('%spot_name%'=>$spot->getName()))); ?>
+<?php op_include_box('spotCheckInList', get_slot('checkInList'), array('title'=>__('list of %checkin% to %spot_name%', array('%spot_name%'=>$spot->getName())))); ?>

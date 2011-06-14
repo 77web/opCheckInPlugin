@@ -1,6 +1,6 @@
 <?php slot('firstRow'); ?>
   <tr>
-    <th><?php echo __('Where to %checkin%'); ?></th>
+    <th><?php echo __('Where to %checkin%', array(), 'form_checkin'); ?></th>
     <td><?php echo $form->getObject()->getCheckInSpot()->getName(); ?></td>
   </tr>
 <?php end_slot(); ?>

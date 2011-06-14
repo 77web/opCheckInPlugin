@@ -72,7 +72,7 @@ abstract class opCheckInPluginCheckInActions extends sfActions
       $request->checkCSRFProtection();
       
       $this->checkIn->delete();
-      $this->getUser()->setFlash('notice', 'Deleted successfully.');
+      $this->getUser()->setFlash('notice', 'Deleted %checkin% successfully.');
       $this->redirect('@my_checkin_list');
       return;
     }

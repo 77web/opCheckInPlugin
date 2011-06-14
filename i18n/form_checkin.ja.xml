@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+  <file orginal="global" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="">
+        <source>Where to %checkin%</source>
+        <target>%checkin%するスポット</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Body</source>
+        <target>本文</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Public flag</source>
+        <target>公開範囲</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

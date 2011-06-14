@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+  <file orginal="global" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="">
+        <source>%member_name%\'s %checkin%</source>
+        <target>%member_name%さんの%checkin%</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>%checkin% of %my_friend%</source>
+        <target>%my_friend%の%checkin%</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>%checkin% of all</source>
+        <target>全体の%checkin%</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Deleted %checkin% successfully.</source>
+        <target>%checkin%を削除しました。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Deleted a comment to %checkin% successfully.</source>
+        <target>%checkin%へのコメントを削除しました。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>No %checkin% yet.</source>
+        <target>まだ%checkin%した人はいません。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Recent %checkin% of %my_friend%</source>
+        <target>%my_friend%の最新%checkin%</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>%name%\'s recent %checkin%</source>
+        <target>%name%さんの最新%checkin%</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>My recent %checkin%</source>
+        <target>自分の最新%checkin%</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Recent %checkin% of all</source>
+        <target>全体の最新%checkin%</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Are you sure to delete %checkin% ?</source>
+        <target>%checkin%を削除してよろしいですか？</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>%checkin% to %spot% at %date%</source>
+        <target>%date% %spot%への%checkin%</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>New %checkin%</source>
+        <target>%checkin%する</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Edit %checkin%</source>
+        <target>%checkin%を編集する</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>No %checkin%.</source>
+        <target>%checkin%はありません。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Unsupported device.</source>
+        <target>位置情報送信に対応した端末からアクセスしてください。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Device error</source>
+        <target>端末</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Notify where I am</source>
+        <target>位置情報を送信する</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Please select a spot to %checkin%.</source>
+        <target>%checkin%するスポットを選んでください。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>No %checkin% spot around you.</source>
+        <target>%checkin%できるスポットが周囲にありません。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Where to %checkin% ?</source>
+        <target>%checkin%場所の選択</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>%checkin% date</source>
+        <target>%checkin%日時</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>%checkin% spot</source>
+        <target>%checkin%した場所</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Comments on %checkin%</source>
+        <target>%checkin%へのコメント</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>No comment.</source>
+        <target>コメントはありません。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Write a comment</source>
+        <target>コメントを書く</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Are you sure to delete the comment on %checkin% ?</source>
+        <target>%checkin%へのコメントを削除します。よろしいですか？</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Detail of spot</source>
+        <target>スポット詳細</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>list of %checkin% to %spot_name%</source>
+        <target>%spot_name%への%checkin%一覧</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Detail</source>
+        <target>詳細を見る</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source></source>
+        <target></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

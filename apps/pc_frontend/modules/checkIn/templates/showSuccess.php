@@ -29,7 +29,7 @@
 <?php end_slot(); ?>
 
 
-<?php op_include_box('checkInDetailBox', get_slot('checkInBox'), array('title' => __('%member%\'s %checkin%', array('%member%'=>$checkIn->getMember()->getName())))); ?>
+<?php op_include_box('checkInDetailBox', get_slot('checkInBox'), array('title' => __('%member_name%\'s %checkin%', array('%member_name%'=>$checkIn->getMember()->getName())))); ?>
 
 <?php slot('commentList'); ?>
 <?php if($commentPager->getNbResults() > 0): ?>

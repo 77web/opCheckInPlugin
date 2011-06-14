@@ -1,4 +1,4 @@
-<?php echo __('Where to %checkin%'); ?>:<br />
+<?php echo __('Where to %checkin%', array(), 'form_checkin'); ?>:<br />
 <?php echo $form->getObject()->getCheckInSpot()->getName(); ?><br /><br />
 
 <?php

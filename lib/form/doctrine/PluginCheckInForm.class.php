@@ -19,5 +19,7 @@ abstract class PluginCheckInForm extends BaseCheckInForm
     $flags = $this->getObject()->getTable()->getPublicFlags();
     $this->setWidget('public_flag', new sfWidgetFormChoice(array('choices'=>$flags)));
     $this->setValidator('public_flag', new sfValidatorChoice(array('choices'=>array_keys($flags))));
+    
+    $this->getWidgetSchema()->getFormFormatter()->setTranslationCatalogue('form_checkin');
   }
 }

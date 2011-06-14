@@ -8,4 +8,4 @@
 <?php $moreInfo[] = link_to(__('More'), 'all_checkin_list'); ?>
 <?php endif; ?>
 
-<?php op_include_list('snsRecentCheckInList', $_list, array('title'=>__('recent %checkin% of all'), 'moreInfo'=>$moreInfo)); ?>
+<?php op_include_list('snsRecentCheckInList', $_list, array('title'=>__('Recent %checkin% of all'), 'moreInfo'=>$moreInfo)); ?>
